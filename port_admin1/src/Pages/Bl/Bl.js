@@ -18,7 +18,7 @@ const Bl = () => {
        },[]);
 
        useEffect(()=>{
-        axios.get("/bl/allbl")
+        axios.get("https://port-admin.onrender.com/bl/allbl")
         .then((res)=>{
             setData(res.data);
         })

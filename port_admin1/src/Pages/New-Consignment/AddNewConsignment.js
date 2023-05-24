@@ -18,19 +18,19 @@ const AddNewConsignment = () => {
       })
 
       useEffect(()=>{
-        axios.get("/portmember/allportmember")
+        axios.get("https://port-admin.onrender.com/portmember/allportmember")
         .then((res)=>{
             setport(res.data);
         }).catch((res)=>{
           console.log(res);
         })
-        axios.get("/broker/viewbroker")
+        axios.get("https://port-admin.onrender.com/broker/viewbroker")
         .then((res)=>{
             setBroker(res.data);
         }).catch((res)=>{
           console.log(res);
         })
-        axios.get('/owner/viewowner').then(res => {
+        axios.get('https://port-admin.onrender.com/owner/viewowner').then(res => {
             setowner(res.data)
       })
       },[])

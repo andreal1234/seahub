@@ -13,7 +13,7 @@ const Login = () => {
   }
   const submit=(e)=>{
     e.preventDefault();
-    axios.post("/user/login",user)
+    axios.post("https://port-admin.onrender.com/user/login",user)
     .then((res)=>{
       localStorage.setItem("auth",res.data);
       window.location="/"
@@ -38,22 +38,9 @@ const Login = () => {
                 <img src={process.env.PUBLIC_URL+"./image/logo-dark.png"} alt="no"  height={34} />
                 </div>
               </div>
-              <div className="col-5 align-self-end">
-                <img src="" alt="no" className="img-fluid" />
-              </div>
             </div>
           </div>
           <div className="card-body pt-0"> 
-            <div className="auth-logo">
-              <a href="index.html" className="auth-logo-light">
-                <div className="avatar-md profile-user-wid mb-4">
-                  <span className="avatar-title rounded-circle bg-light">
-                    <img src="assets/images/logo-light.svg" alt="no" className="rounded-circle" height={34} />
-                  </span>
-                </div>
-              </a>
-              
-            </div>
             <div className="p-2">
               <form className="form-horizontal" action="https://themesbrand.com/skote/layouts/index.html">
                 <div className="mb-3">

@@ -29,25 +29,12 @@ const AdminSide = () => {
         <div className="d-flex">
           {/* LOGO */}
           <div className="navbar-brand-box">
-            <a href="index.html" className="logo logo-dark h-50">
-              {/* <span className="logo-sm">
-                <img src={process.env.PUBLIC_URL+"./image/logo-dark.png"} alt height={22} />
-              </span> */}
               <span className="logo-lg bg-dark">
                 <img src={process.env.PUBLIC_URL+"./image/logo-dark.png"} alt="no" height={25} width={80} />
               </span>
-            </a>
-            <a href="index.html" className="logo logo-light">
-              <span className="logo-sm">
-                <img src="assets/images/logo-light.svg" alt="no" height={22} />
-              </span>
-              <span className="logo-lg">
-                <img src="assets/images/logo-light.png" alt="no" height={19} />
-              </span>
-            </a>
+ 
           </div>
          
-          {/* App Search*/}
           
           <div className="dropdown dropdown-mega d-none d-lg-block ms-2">
             
@@ -55,28 +42,17 @@ const AdminSide = () => {
           </div>
         </div>
         <div className="d-flex">
-         
-          
-          
-         
           <div className="dropdown d-inline-block">
-           
-            
           </div>
           <div className="dropdown d-inline-block">
             <button type="button" className="btn header-item waves-effect" id="page-header-user-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <span className="d-none d-xl-inline-block ms-1" key="t-henry">{verify.username}</span>
               <i className="mdi mdi-chevron-down d-none d-xl-inline-block" />
             </button>
-            <div className="dropdown-menu dropdown-menu-end">
-              {/* item*/}
-              {/* <a className="dropdown-item" href="#"><i className="bx bx-user font-size-16 align-middle me-1" /> <span key="t-profile">Profile</span></a>
-              <a className="dropdown-item" href="#"><i className="bx bx-wallet font-size-16 align-middle me-1" /> <span key="t-my-wallet">My Wallet</span></a>
-              <a className="dropdown-item d-block" href="#"><span className="badge bg-success float-end">11</span><i className="bx bx-wrench font-size-16 align-middle me-1" /> <span key="t-settings">Settings</span></a>
-              <a className="dropdown-item" href="#"><i className="bx bx-lock-open font-size-16 align-middle me-1" /> <span key="t-lock-screen">Lock screen</span></a> */}
-               <p className="dropdown-item text-danger"  onClick={logout} ><i className="bx bx-power-off font-size-16 align-middle me-1 text-danger" /> <span key="t-logout">Logout</span></p>
-              {/* <div className="dropdown-divider"  /> */}
-              {/* <a className="dropdown-item text-danger" href="#" onClick={logout} ><i className="bx bx-power-off font-size-16 align-middle me-1 text-danger" /> <span key="t-logout">Logout</span></a> */}
+            <div className="dropdown-menu">
+             
+               <p className="dropdown-item text-danger"  onClick={logout} ><i className="bx bx-power-off font-size-16 align-middle text-danger" /> <span key="t-logout">Logout</span></p>
+             
             </div>
           </div>
          
@@ -118,6 +94,9 @@ const AdminSide = () => {
               </Link>
               <Link to={"/completeconsignment"} className="waves-effect">
                 <span key="t-dashboards" className='h5'>Complete Consignment</span>
+              </Link>
+              <Link to={"/extrawork"} className="waves-effect">
+                <span key="t-dashboards" className='h5'>Extra Work</span>
               </Link>
               </>:""
               }

@@ -36,7 +36,7 @@ const handleData=(e)=>{
 }
 
 const submit=()=>{
-  axios.post("/bl/newbl",data)
+  axios.post("https://port-admin.onrender.com/bl/newbl",data)
   .then((res)=>{
     console.log(res.data);
     window.location='/bl'

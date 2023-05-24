@@ -71,13 +71,13 @@ const Date = () => {
 
     useEffect(()=>{
         setdata({...data,consignmentId:name.id})
-        axios.get(`/consignment/oneconsignment/${name.id}`)
+        axios.get(`https://port-admin.onrender.com/consignment/oneconsignment/${name.id}`)
         .then((res)=>{
             setConsign(res.data);
         }).catch((res)=>{
   
         })
-        axios.get(`/allconsignment/timedata/${name.id}`)
+        axios.get(`https://port-admin.onrender.com/allconsignment/timedata/${name.id}`)
         .then((res)=>{
             if(res.data===''){
 
@@ -150,7 +150,7 @@ const Date = () => {
     const submit=(e)=>{
         e.preventDefault();
         console.log(data);
-        axios.post('/allconsignment/alldate',data)
+        axios.post('https://port-admin.onrender.com/allconsignment/alldate',data)
         .then((res)=>{
             window.location='/';
         }).catch((res)=>{

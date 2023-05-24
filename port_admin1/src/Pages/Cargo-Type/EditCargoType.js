@@ -15,7 +15,7 @@ const EditCargoType = () => {
         pfad:""
     })
     useEffect((res)=>{
-        axios.get(`/cargo/oneCargo/${name.id}`)
+        axios.get(`https://port-admin.onrender.com/cargo/oneCargo/${name.id}`)
         .then((res)=>{
             setcargo(res.data)
         }).catch((res)=>{
@@ -28,7 +28,7 @@ const EditCargoType = () => {
     }
     const submit=(e)=>{
         e.preventDefault();
-        axios.put(`/cargo/updateCargo/${name.id}`,cargo)
+        axios.put(`https://port-admin.onrender.com/cargo/updateCargo/${name.id}`,cargo)
         .then((res)=>{
             window.location = "/cargotype"
         }).catch((res)=>{

@@ -7,7 +7,7 @@ const CargoType = () => {
   const [CargoType, setCargoType] = useState([])
   const [search, setSearech] = useState([])
   useEffect(() => {
-    axios.get('/cargo/viewCargo').then(res => {
+    axios.get('https://port-admin.onrender.com/cargo/viewCargo').then(res => {
       setCargoType(res.data)
       setSearech(res.data)
     })
@@ -25,7 +25,7 @@ const CargoType = () => {
   }
 
   const delet = (e)=>{
-    axios.delete(`/cargo/${e}`)
+    axios.delete(`https://port-admin.onrender.com/cargo/${e}`)
     .then((res)=>{
         window.location.reload()
     }).catch((res)=>{

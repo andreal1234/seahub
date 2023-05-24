@@ -13,7 +13,7 @@ const CustomerEdit = () => {
         address:""
     })
     useEffect(()=>{
-        axios.get(`/cutomer/onecustomer/${name.id}`)
+        axios.get(`https://port-admin.onrender.com/cutomer/onecustomer/${name.id}`)
         .then((res)=>{
             setdata(res.data)
         }).catch((res)=>{
@@ -26,7 +26,7 @@ const CustomerEdit = () => {
     }
     const submit=(e)=>{
         e.preventDefault();
-        axios.put(`/cutomer/updateCustomer/${name.id}`,data)
+        axios.put(`https://port-admin.onrender.com/cutomer/updateCustomer/${name.id}`,data)
         .then((res)=>{
             toast.success("Edit sucessfull", {
                 position: toast.POSITION.TOP_CENTER,

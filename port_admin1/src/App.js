@@ -42,6 +42,9 @@ import Date from './Pages/AllDate/Date';
 import Bl from './Pages/Bl/Bl';
 import EditAdminBl from './Pages/Bl/EditAdminBl';
 import CreateAllBl from './Pages/Bl/CreateAllBl';
+import ExtarWork from './Pages/ExtraWork/ExtarWork';
+import { AddExtrawork } from './Pages/ExtraWork/AddExtrawork';
+import ViewExtraWork from './Pages/ExtraWork/ViewExtraWork';
 
 function App() {
   const [token,settoken] = useState('')
@@ -136,6 +139,9 @@ function App() {
        <Route path="/portshow/:id" element={<ShowPort/>}/>
        <Route path="/portshowedit/:id" element={<Editports/>}/>
 
+       <Route path="/extrawork" element={<ExtarWork/>}/>
+       <Route path="/addextrawork/:id" element={<AddExtrawork/>}/>
+       <Route path="/viewextrawork/:id" element={<ViewExtraWork/>}/>
 
        <Route path="/bl" element={<Bl/>}/>
        <Route path="/editadminbl/:id" element={verify.role==="superadmin" ||verify.role==="all"?<EditAdminBl/>:""}/>

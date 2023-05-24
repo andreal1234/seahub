@@ -1,4 +1,4 @@
-const express = require("express");
+const express = require('express');
 const app=express();
 const db = require("./DB/Db")
 const cors = require("cors")
@@ -34,5 +34,5 @@ app.use("/allconsignment",allconsignment)
 
 
 
-app.listen(process.env.PORT||5000,console.log(`server start in ${process.env.PORT}`))
+app.listen(5000,console.log(`server start in 5000`))
 

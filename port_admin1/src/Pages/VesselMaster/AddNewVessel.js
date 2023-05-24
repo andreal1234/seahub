@@ -18,7 +18,7 @@ const AddNewVessel = () => {
   const submit=async (e)=>{
     e.preventDefault();
     console.log(vesel);
-    await axios.post("/vessel/addvessel",vesel)
+    await axios.post("https://port-admin.onrender.com/vessel/addvessel",vesel)
     .then((res)=>{
       toast.success("vessel sucessfully added ", {
         position: toast.POSITION.TOP_CENTER,

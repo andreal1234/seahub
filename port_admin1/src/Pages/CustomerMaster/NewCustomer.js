@@ -16,7 +16,7 @@ const NewCustomer = () => {
     }
     const submit=(e)=>{
         e.preventDefault();
-        axios.post("/cutomer/newcustomer",data)
+        axios.post("https://port-admin.onrender.com/cutomer/newcustomer",data)
         .then((res)=>{
             toast.success("Customer created sucessfully", {
                 position: toast.POSITION.TOP_CENTER,

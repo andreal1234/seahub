@@ -16,14 +16,14 @@ export const SBL = () => {
   var i=1;
 
   useEffect(()=>{
-    axios.get("/bl/allbl")
+    axios.get("https://port-admin.onrender.com/bl/allbl")
     .then((res)=>{
       // setCustomer(res.data);
       // setSearech(res.data)
     }).catch((res)=>{
       console.log(res);
     })
-    axios.get(`/bl/blAddedFind/${name.id}`)
+    axios.get(`https://port-admin.onrender.com/bl/blAddedFind/${name.id}`)
     .then((res)=>{
       console.log(res.data);
       setBl(res.data);

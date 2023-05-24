@@ -35,7 +35,7 @@ const EditAdminBl = () => {
 
 
   useEffect(()=>{
-    axios.get(`/bl/onebl/${name.id}`)
+    axios.get(`https://port-admin.onrender.com/bl/onebl/${name.id}`)
     .then((res)=>{
         console.log(res.data);
         setdata(res.data)
@@ -49,7 +49,7 @@ const EditAdminBl = () => {
     }
 
     const submit=()=>{
-        axios.put(`/bl/updatebl/${name.id}`,data)
+        axios.put(`https://port-admin.onrender.com/bl/updatebl/${name.id}`,data)
         .then((res)=>{
           console.log(res.data);
           window.location='/bl'

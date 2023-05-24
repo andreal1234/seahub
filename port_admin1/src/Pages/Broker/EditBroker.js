@@ -13,7 +13,7 @@ const EditBroker = () => {
         country:""
     })
     useEffect(()=>{
-        axios.get(`/broker/onebroker/${name.id}`)
+        axios.get(`https://port-admin.onrender.com/broker/onebroker/${name.id}`)
         .then((res)=>{
             setbroker(res.data)
         }).catch((res)=>{
@@ -26,7 +26,7 @@ const EditBroker = () => {
     }
     const submit=(e)=>{
         e.preventDefault();
-        axios.put(`/broker/updatebroker/${name.id}`,broker)
+        axios.put(`https://port-admin.onrender.com/broker/updatebroker/${name.id}`,broker)
         .then((res)=>{
             window.location = "/broker"
         }).catch((res)=>{

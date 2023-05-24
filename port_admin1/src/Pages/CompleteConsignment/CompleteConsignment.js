@@ -6,7 +6,7 @@ const CompleteConsignment = () => {
     const[complete,setComplete] = useState([])
 
     useEffect(()=>{
-        axios.get("/allconsignment/viewAllconsignmentetatrue")
+        axios.get("https://port-admin.onrender.com/allconsignment/viewAllconsignmentetatrue")
         .then((res)=>{
             console.log(res.data);
             setComplete(res.data);

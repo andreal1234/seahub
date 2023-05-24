@@ -17,7 +17,7 @@ const EditVessel = () => {
 
     })
     useEffect(()=>{
-        axios.get(`/vessel/oneVessel/${name.id}`)
+        axios.get(`https://port-admin.onrender.com/vessel/oneVessel/${name.id}`)
         .then((res)=>{
             // console.log(res.data);
             setvessel(res.data)
@@ -31,7 +31,7 @@ const EditVessel = () => {
     }
     const submit=(e)=>{
         e.preventDefault();
-        axios.put(`/vessel/updateOneVessel/${name.id}`,vessel)
+        axios.put(`https://port-admin.onrender.com/vessel/updateOneVessel/${name.id}`,vessel)
         .then((res)=>{
             toast.success("Edit sucessfull", {
                 position: toast.POSITION.TOP_CENTER,

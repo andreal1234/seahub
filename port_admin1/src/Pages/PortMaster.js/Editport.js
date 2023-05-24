@@ -13,7 +13,7 @@ const Editport = () => {
       email:"",
     })
     useEffect(()=>{
-        axios.get(`/portmember/oneport/${name.id}`)
+        axios.get(`https://port-admin.onrender.com/portmember/oneport/${name.id}`)
         .then((res)=>{
             setdata(res.data)
         }).catch((res)=>{
@@ -26,7 +26,7 @@ const Editport = () => {
     }
     const submit=(e)=>{
         e.preventDefault();
-        axios.put(`/portmember/updateport/${name.id}`,data)
+        axios.put(`https://port-admin.onrender.com/portmember/updateport/${name.id}`,data)
         .then((res)=>{
           window.location='/port'
         }).catch((res)=>{

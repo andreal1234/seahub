@@ -10,7 +10,7 @@ const CustomerMaster = () => {
   const [search,setSearech] = useState([])
 
   useEffect(()=>{
-    axios.get("/cutomer/allcustomer")
+    axios.get("https://port-admin.onrender.com/cutomer/allcustomer")
     .then((res)=>{
       setCustomer(res.data);
       setSearech(res.data)
@@ -20,7 +20,7 @@ const CustomerMaster = () => {
   },[])
 
   const delet=(e)=>{
-    axios.delete(`/cutomer/${e}`)
+    axios.delete(`https://port-admin.onrender.com/cutomer/${e}`)
     .then((res)=>{
       toast.warning("sucessfully deleted", {
         position: toast.POSITION.TOP_CENTER,

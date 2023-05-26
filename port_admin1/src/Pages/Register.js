@@ -16,14 +16,14 @@ const Register = () => {
         setUser({...user,[e.target.name]:e.target.value})
       }
       useEffect(()=>{
-        axios.get("https://port-admin.onrender.com/portmember/allportmember")
+        axios.get("https://port-repo.onrender.com/portmember/allportmember")
         .then((res)=>{
           setport(res.data)
         })
       })
       const submit=(e)=>{
         e.preventDefault();
-        axios.post("https://port-admin.onrender.com/user/register",user)
+        axios.post("https://port-repo.onrender.com/user/register",user)
         .then((res)=>{
             localStorage.setItem("auth",res.data);
             window.location="/"

@@ -8,7 +8,7 @@ const NewConsignment = () => {
     // const [consignment, setconsignment] = useState([])
     const [search, setSearech] = useState([])
     useEffect(() => {
-      axios.get('https://port-admin.onrender.com/consignment/viewconsignmenetbt').then(res => {
+      axios.get('https://port-repo.onrender.com/consignment/viewconsignmenetbt').then(res => {
         // setconsignment(res.data)
         setSearech(res.data)
       })
@@ -26,7 +26,7 @@ const NewConsignment = () => {
     // }
   
     const delet = (e)=>{
-      axios.delete(`https://port-admin.onrender.com/consignment/${e}`)
+      axios.delete(`https://port-repo.onrender.com/consignment/${e}`)
       .then((res)=>{
           window.location.reload()
       }).catch((res)=>{

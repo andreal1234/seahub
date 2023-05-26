@@ -13,7 +13,7 @@ const EditOwner = () => {
         country:""
     })
     useEffect((res)=>{
-        axios.get(`https://port-admin.onrender.com/owner/oneowner/${name.id}`)
+        axios.get(`https://port-repo.onrender.com/owner/oneowner/${name.id}`)
         .then((res)=>{
             setowner(res.data)
         }).catch((res)=>{
@@ -26,7 +26,7 @@ const EditOwner = () => {
     }
     const submit=(e)=>{
         e.preventDefault();
-        axios.put(`https://port-admin.onrender.com/owner/updateowner/${name.id}`,owner)
+        axios.put(`https://port-repo.onrender.com/owner/updateowner/${name.id}`,owner)
         .then((res)=>{
             window.location = "/owner"
         }).catch((res)=>{

@@ -18,6 +18,7 @@ var a=1
 var b=1
 var c=1
 var d=1
+var e=1
   return (
     <div className='main-content'>
     <div className='page-content'>
@@ -34,7 +35,7 @@ var d=1
                     <th>Broker</th>
                     <th>EPDA</th>
                     <th>ETA</th>
-                    <th>Extra Work done on<br/> Description of Extra Work</th>
+                    {/* <th>Extra Work done on<br/> Description of Extra Work</th> */}
                   </tr>
                 </thead>
                 <tbody>
@@ -47,7 +48,7 @@ var d=1
                       <td>{data.consignId.broker}</td>
                       <td>{data.consignId.epda}</td>
                       <td>{data.consignId.eta}</td>
-                      <td>{data.extrawork}</td>
+                      {/* <td>{data.extrawork}</td> */}
                       </tr>
                 ))}
                 </tbody>
@@ -162,6 +163,30 @@ var d=1
                     <tr>
                       <th scope='row'>{d++}</th>
                       <td>{data.crewName}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div className='card'>
+          <div className='card-body'>
+            <div className='table-responsive'>
+              <table className='table table-borderless mb-0'>
+                <thead>
+                  <tr>
+                    <th>No</th>
+                    <th>crewName</th>
+                    
+                  </tr>
+                </thead>
+                <tbody>
+                  {data.five.map(data => (
+                    <tr>
+                      <th scope='row'>{e++}</th>
+                      <td>{data.extrawork}</td>
                     </tr>
                   ))}
                 </tbody>

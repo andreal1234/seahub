@@ -43,7 +43,7 @@ const EditBl = () => {
     
     
     useEffect(()=>{
-      axios.get(`https://port-admin.onrender.com/bl/allBlOne/${name.id}`)
+      axios.get(`https://port-repo.onrender.com/bl/allBlOne/${name.id}`)
         .then((res)=>{
           setBlData(res.data)
             setdata(res.data.blAdmin)
@@ -59,7 +59,7 @@ const EditBl = () => {
     }
     const submit=(e)=>{
         e.preventDefault();
-        axios.put(`https://port-admin.onrender.com/bl/allupdateBl/${name.id}`,blData)
+        axios.put(`https://port-repo.onrender.com/bl/allupdateBl/${name.id}`,blData)
         .then((res)=>{
             window.location='/bl'
 

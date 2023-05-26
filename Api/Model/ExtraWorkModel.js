@@ -2,7 +2,6 @@ const mongoose = require("mongoose");
 
 const extraWorkSchema = new mongoose.Schema({
     consignId:{ type:mongoose.Schema.Types.ObjectId,ref:"consignment",required:true},
-    extrawork:{type: String},
     first:[
         {
         carbooking:{type: String},
@@ -32,6 +31,11 @@ const extraWorkSchema = new mongoose.Schema({
       four: [
         { 
             crewName: {type: String}
+        },
+      ],
+      five: [
+        { 
+          extrawork: {type: String}
         },
       ]
 })

@@ -6,13 +6,13 @@ import { Link } from 'react-router-dom'
 const ExtarWork = () => {
     const [search, setSearech] = useState([])
     useEffect(() => {
-      axios.get('https://port-admin.onrender.com/consignment/viewconsignmenetbt').then(res => {
+      axios.get('https://port-repo.onrender.com/consignment/viewconsignmenetbt').then(res => {
         setSearech(res.data)
       })
     }, [])
 
     const delet = (e)=>{
-      axios.delete(`https://port-admin.onrender.com/consignment/${e}`)
+      axios.delete(`https://port-repo.onrender.com/consignment/${e}`)
       .then((res)=>{
           window.location.reload()
       }).catch((res)=>{

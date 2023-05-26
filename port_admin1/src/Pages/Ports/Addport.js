@@ -30,7 +30,7 @@ const Addport = () => {
        }])
       }
       useEffect(()=>{
-        axios.get(`https://port-admin.onrender.com/consignment/oneconsignment/${name.id}`)
+        axios.get(`https://port-repo.onrender.com/consignment/oneconsignment/${name.id}`)
         .then((res)=>{
           setConsign(res.data);
           setport({...port,etas:res.data.eta,consignmentId:res.data._id})
@@ -38,7 +38,7 @@ const Addport = () => {
 
         })
 
-        axios.get('https://port-admin.onrender.com/cargo/viewCargo')
+        axios.get('https://port-repo.onrender.com/cargo/viewCargo')
         .then((res)=>{
           setcargo(res.data)
         }).catch((res)=>{
@@ -61,7 +61,7 @@ const Addport = () => {
         e.preventDefault()
         console.log(port);
         console.log(inputlist);
-        axios.post(`https://port-admin.onrender.com/allconsignment/newallconsignment`,{data:port,inputlist:inputlist})
+        axios.post(`https://port-repo.onrender.com/allconsignment/newallconsignment`,{data:port,inputlist:inputlist})
                   .then((res)=>{
             window.location = "/"
           })

@@ -139,9 +139,9 @@ function App() {
        <Route path="/portshow/:id" element={<ShowPort/>}/>
        <Route path="/portshowedit/:id" element={<Editports/>}/>
 
-       <Route path="/extrawork" element={<ExtarWork/>}/>
-       <Route path="/addextrawork/:id" element={<AddExtrawork/>}/>
-       <Route path="/viewextrawork/:id" element={<ViewExtraWork/>}/>
+       <Route path="/extrawork" element={verify.role==="port" ||verify.role==="all"||verify.role==="superadmin"? <ExtarWork/>:''}/>
+       <Route path="/addextrawork/:id" element={verify.role==="port" ||verify.role==="all"||verify.role==="superadmin"?<AddExtrawork/>:''}/>
+       <Route path="/viewextrawork/:id" element={verify.role==="port" ||verify.role==="all"||verify.role==="superadmin"?<ViewExtraWork/>:''}/>
 
        <Route path="/bl" element={<Bl/>}/>
        <Route path="/editadminbl/:id" element={verify.role==="superadmin" ||verify.role==="all"?<EditAdminBl/>:""}/>

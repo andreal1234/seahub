@@ -9,7 +9,7 @@ const PortMaster = () => {
   const [search,setSearech] = useState([])
 
   useEffect(()=>{
-    axios.get("https://port-admin.onrender.com/portmember/allportmember")
+    axios.get("https://port-repo.onrender.com/portmember/allportmember")
     .then((res)=>{
       setCustomer(res.data);
       setSearech(res.data)
@@ -19,7 +19,7 @@ const PortMaster = () => {
   },[])
 
   const delet=(e)=>{
-    axios.delete(`https://port-admin.onrender.com/portmember/${e}`)
+    axios.delete(`https://port-repo.onrender.com/portmember/${e}`)
     .then((res)=>{
       toast.warning("sucessfully deleted", {
         position: toast.POSITION.TOP_CENTER,

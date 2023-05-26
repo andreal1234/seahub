@@ -21,13 +21,13 @@ const [vessel,setvessel] = useState([])
       
       
     useEffect(()=>{
-        axios.get(`https://port-admin.onrender.com/consignment/oneconsignment/${name.id}`)
+        axios.get(`https://port-repo.onrender.com/consignment/oneconsignment/${name.id}`)
         .then((res)=>{
             setvessel(res.data);
         }).catch((res)=>{
 
         })
-        axios.get(`https://port-admin.onrender.com/account/oneAccount/${name.id}`)
+        axios.get(`https://port-repo.onrender.com/account/oneAccount/${name.id}`)
         .then((res)=>{
             var Adddate1,inndate1,rdate1;
             {res.data.Adddate ? Adddate1=moment(res.data.Adddate).format("YYYY-MM-DD"):Adddate1=""};
@@ -46,7 +46,7 @@ const [vessel,setvessel] = useState([])
     const submit=(e)=>{
         e.preventDefault();
         console.log(account);
-        axios.post(`https://port-admin.onrender.com/account/newAccount`,account)
+        axios.post(`https://port-repo.onrender.com/account/newAccount`,account)
         .then((res)=>{
             window.location = "/"
         }).catch((res)=>{

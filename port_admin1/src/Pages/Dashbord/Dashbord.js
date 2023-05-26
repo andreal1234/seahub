@@ -17,7 +17,7 @@ export const Dashbord = () => {
     }
    },[]);
    useEffect(()=>{
-    axios.get("https://port-admin.onrender.com/consignment/viewconsignmenetbt")
+    axios.get("https://port-repo.onrender.com/consignment/viewconsignmenetbt")
     .then((res)=>{
       if(verify.role==="accounts"||verify.role==="superadmin"||verify.role==="all"){
         setdata(res.data)
@@ -29,7 +29,7 @@ export const Dashbord = () => {
     }).catch((res)=>{
       console.log(res);
     })
-    axios.get("https://port-admin.onrender.com/allconsignment/viewAllconsignmenteta")
+    axios.get("https://port-repo.onrender.com/allconsignment/viewAllconsignmenteta")
     .then((res)=>{
       if(verify.role==="accounts"||verify.role==="superadmin"||verify.role==="all"){
         setWork(res.data)

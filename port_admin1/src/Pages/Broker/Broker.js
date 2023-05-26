@@ -6,7 +6,7 @@ const Broker = () => {
   const [broker, setBroker] = useState([])
   const [search, setSearech] = useState([])
   useEffect(() => {
-    axios.get('https://port-admin.onrender.com/broker/viewbroker').then(res => {
+    axios.get('https://port-repo.onrender.com/broker/viewbroker').then(res => {
       setBroker(res.data)
       setSearech(res.data)
     })
@@ -24,7 +24,7 @@ const Broker = () => {
   }
 
   const delet = (e)=>{
-    axios.delete(`https://port-admin.onrender.com/broker/${e}`)
+    axios.delete(`https://port-repo.onrender.com/broker/${e}`)
     .then((res)=>{
         window.location.reload()
     }).catch((res)=>{

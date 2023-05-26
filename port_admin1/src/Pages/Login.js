@@ -13,7 +13,7 @@ const Login = () => {
   }
   const submit=(e)=>{
     e.preventDefault();
-    axios.post("https://port-admin.onrender.com/user/login",user)
+    axios.post("https://port-repo.onrender.com/user/login",user)
     .then((res)=>{
       localStorage.setItem("auth",res.data);
       window.location="/"

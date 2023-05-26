@@ -19,7 +19,7 @@ const Editports = () => {
 
   
     useEffect(()=>{
-      axios.get(`https://port-admin.onrender.com/allconsignment/oneconsign/${name.id}`)
+      axios.get(`https://port-repo.onrender.com/allconsignment/oneconsign/${name.id}`)
       .then((res)=>{
         console.log(res.data);
         setConsign(res.data.consignmentId);
@@ -38,7 +38,7 @@ const Editports = () => {
     const submit = (e) => {
       e.preventDefault()
       console.log(ports);
-      axios.put(`https://port-admin.onrender.com/allconsignment/updateconsignment/${name.id}`,ports)
+      axios.put(`https://port-repo.onrender.com/allconsignment/updateconsignment/${name.id}`,ports)
                 .then((res)=>{
           window.location = "/"
         })

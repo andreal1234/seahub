@@ -20,7 +20,7 @@ const ShowPort = () => {
 
 
   useEffect(() => {
-    axios.get("https://port-admin.onrender.com/allconsignment/viewAllconsignmenteta").then(res => {
+    axios.get("https://port-repo.onrender.com/allconsignment/viewAllconsignmenteta").then(res => {
       if(verify.portaccess){
         const filterData = res.data.filter(data =>data.port===verify.portaccess)
         // setBroker(filterData)
@@ -42,7 +42,7 @@ const ShowPort = () => {
   // }
 
   const delet = (e)=>{
-    axios.delete(`https://port-admin.onrender.com/allconsignment/${e}`)
+    axios.delete(`https://port-repo.onrender.com/allconsignment/${e}`)
     .then((res)=>{
         window.location='/'
     }).catch((res)=>{

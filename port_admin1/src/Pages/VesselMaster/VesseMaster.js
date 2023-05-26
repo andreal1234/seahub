@@ -8,7 +8,7 @@ const VesseMaster = () => {
   const [vessel,setVessel] = useState([])
   const [search,setSearech] = useState([])
   useEffect(()=>{
-    axios.get("https://port-admin.onrender.com/vessel/allvessel")
+    axios.get("https://port-repo.onrender.com/vessel/allvessel")
     .then((res)=>{
       setVessel(res.data);
       setSearech(res.data)
@@ -18,7 +18,7 @@ const VesseMaster = () => {
   },[])
 
   const delet=(e)=>{
-    axios.delete(`https://port-admin.onrender.com/vessel/${e}`)
+    axios.delete(`https://port-repo.onrender.com/vessel/${e}`)
     .then((res)=>{
       toast.warning("sucessfully deleted", {
         position: toast.POSITION.TOP_CENTER,

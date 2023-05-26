@@ -17,7 +17,7 @@ const NewportMaster = () => {
     const submit=(e)=>{
         e.preventDefault();
         console.log(data);
-        axios.post("https://port-admin.onrender.com/portmember/newportmember",data)
+        axios.post("https://port-repo.onrender.com/portmember/newportmember",data)
         .then((res)=>{
             window.location='/port'
 

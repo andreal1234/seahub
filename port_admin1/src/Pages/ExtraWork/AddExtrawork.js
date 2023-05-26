@@ -16,14 +16,13 @@ export const AddExtrawork = () => {
       ownerName:""
      })
   const [data,setData]=useState({
-    extrawork:'',
     consignId:''
   })
   const handleinputdata=(e)=>{
     setData({...data,extrawork:e.target.value})
   }
     useEffect((res)=>{
-        axios.get(`https://port-admin.onrender.com/consignment/oneconsignment/${name.id}`)
+        axios.get(`https://port-repo.onrender.com/consignment/oneconsignment/${name.id}`)
         .then((res)=>{
           setConsignment(res.data)
           setData({...data,consignId:res.data._id})
@@ -158,12 +157,38 @@ export const AddExtrawork = () => {
         list[index][name] = value;
         setFour(list); 
     }
+
+    //five
+  const [five,setFive]=useState([{
+       extrawork:'',
+    }
+    ])
+
+    const addFive =(e)=>{
+        e.preventDefault();
+        setFive([...five,{
+            extrawork:'',
+        }]) 
+    }
+    const addFiveRemove=(index)=>{
+        alert("One Item is deleted");
+        const list=[...five];
+        list.splice(index,1);
+        setFive(list)
+    }
+    const handleinputFive =(e,index)=>{
+        const {name,value} = e.target;
+        const list = [...five];
+        list[index][name] = value;
+        setFive(list); 
+    }
+
     
     //submit all data
 
     const submit=(e)=>{
         e.preventDefault();
-        axios.post(`http://localhost:5000/allconsignment/extrawork`,{first:first,second:second,third:third,four:four,data:data})
+        axios.post(`http://localhost:5000/allconsignment/extrawork`,{first:first,second:second,third:third,four:four,five:five,data:data})
         .then((res)=>{
             window.location = "/extrawork"
         }).catch((res)=>{
@@ -595,6 +620,9 @@ export const AddExtrawork = () => {
         </div>  
 
 
+{ five.map((x,i)=>{
+    return(
+    <>
         <div className='row mb-3'>
           <label htmlFor='inputEmail3' className='col-sm-2 col-form-label'>
           Extra Work done on
@@ -605,11 +633,25 @@ export const AddExtrawork = () => {
               className='form-control'
               name='extrawork'
               id='inputEmail3'
-              onChange={handleinputdata}
+              onChange={e=>handleinputFive(e,i)}
               required
             />
           </div>
         </div>
+        <div className='row mb-3 '>
+       {five.length>1? <button type='submit' className='btn btn-danger col-1 btn-left' onClick={()=>addFiveRemove(i)}>
+          Remove
+        </button>:""}
+        </div>
+        </>
+         )})
+        }
+       <div className='row mb-5'>
+        <button type='submit' className='btn btn-primary col-2 btn-left ' onClick={addFive}>
+          Add More
+        </button>
+        </div>  
+
 
         <button type='submit' className='btn btn-primary mt-2' onClick={submit}>
           Add Extra Work

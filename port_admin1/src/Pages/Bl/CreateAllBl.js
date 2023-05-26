@@ -62,7 +62,7 @@ const CreateAllBl = () => {
  },[count])
 
  useEffect(()=>{
-    axios.get(`https://port-admin.onrender.com/bl/onebl/${name.id}`)
+    axios.get(`https://port-repo.onrender.com/bl/onebl/${name.id}`)
     .then((res)=>{
         setdata(res.data)
     }).catch((res)=>{
@@ -109,7 +109,7 @@ const CreateAllBl = () => {
 
    const submit=(e)=>{
      e.preventDefault();
-     axios.post("https://port-admin.onrender.com/bl/newAllbl",{id:name.id,inputlist:inputlist})
+     axios.post("https://port-repo.onrender.com/bl/newAllbl",{id:name.id,inputlist:inputlist})
      .then((res)=>{
       window.location='/bl'
      }).catch((res)=>{
